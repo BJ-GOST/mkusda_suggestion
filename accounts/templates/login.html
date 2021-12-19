@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+	{%if messages %}
+	<p>
+		{%for message in messages%}
+		<li>{{message}}</li>
+		{%endfor%}
+	</p>
+	{%endif%}
+	<style type="text/css">
+		
+		
+	</style>	
+<form  method="post">
+	{%csrf_token%}
+	<div class="mb-3">
+		<label for="exampleInputEmail1" class="form-label">Email address</label>
+		<input type="text" class="form-control"   name="username" required>
+		<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+	</div>
+	<div class="mb-3">
+		<label for="exampleInputPassword1" class="form-label">Password</label>
+		<input type="password" class="form-control"  name="password" required>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{%endblock%}
+
+<!--<div class="mine">
+	<form action="{% url 'login'%}" method="post" class="myform">
+		{%csrf_token%}
+		<label for="username" class="lame">Username</label>
+		<input type="text" name="username" placeholder="username" class="name">
+		<label for="password" class="lass">Password</label>
+		<input type="password" name="password" placeholder="Password" class="pass">
+		<button type="submit" class="bt">Login</button>
+	</form>
+</div>
+
