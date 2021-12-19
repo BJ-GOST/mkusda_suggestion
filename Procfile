@@ -1,0 +1,1 @@
+web: gunicorn missionbox.wsgi --log-file -
