@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+
+<style type="text/css">
+	.but{
+		background: brown;
+		color: whitesmoke;
+		height: 50px;
+		width: 100px;
+		border: 0px;
+		border-radius: 5px;
+		grid-area: but;
+	}
+	.but:hover, .but:active{
+		background: white;
+		color: black;
+	}
+	.log{
+		text-decoration: none;
+		background: brown;
+		color: whitesmoke;
+		height: 50px;
+		width: 100px;
+		border: 0px;
+		border-radius: 5px;
+		padding: 15px;
+		grid-area: log;
+
+	}
+	.log:hover, .log:active{
+		background: white;
+		color: black;
+	}
+	.form{
+		grid-area: form;
+	}
+	.cont{
+		display: grid;
+		grid-template-areas:'form' 
+							'but'
+							'log';
+	}
+
+</style>
+<center>
+	<h2>Leave a suggestion</h2>
+	<div class="cont">
+		<form method="post">
+			{%csrf_token%}
+			<label for="">Your Phone Contact:</label>
+			<p>{{form.contact}}</p>
+			<label for="">Mission site:</label>
+			<p>{{form.site}}</p>
+			<label for="">The conference of the proposed mission site:</label>
+			<p>{{form.field}}</p>
+			<label for="">Transport from Thika:</label>
+			<p>{{form.transport}}</p>
+			<button class="but">Suggest</button>	
+			<a href="{%url 'logout'%}" class="log">Logout</a>
+		</form>
+	</div>
+	
+</center>
+	
+{%endblock%}
