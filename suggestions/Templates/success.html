@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block content%}
+<style type="text/css">
+    .log{
+		text-decoration: none;
+		background: brown;
+		color: whitesmoke;
+		height: 50px;
+		width: 100px;
+		border: 0px;
+		border-radius: 5px;
+		padding: 15px;
+		grid-area: log;
+
+	}
+	.log:hover, .log:active{
+		background: white;
+		color: black;
+	}
+</style>
+
+<p><h4>Thankyou for your suggestion</h4></p>
+<a href="{%url 'logout'%}" class="log">Logout</a>
+<a href="{%url 'suggestion_list'%}" class="log">Suggestions</a>
+
+{%endblock%}
