@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<center>
+	<form method="POST">
+		{%csrf_token%}
+		<div class="form-group">
+			<label for="exampleInputEmail1">Name</label>
+			<p>{{form.username}}</p>
+			<label for="exampleInputEmail1">Email</label>
+			<p>{{form.email}}</p>
+			<label for="exampleInputPassword1">Password</label>
+			<p>{{form.password1}}</p>
+			<label for="exampleInputPassword1">Confirm Password</label>
+			<p>{{form.password2}}</p>
+		</div>
+		<button type="submit" class="btn btn-secondary"> Register </button>	
+	</form>
+</center>
+
+{%endblock%}
